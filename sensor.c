@@ -1,15 +1,3 @@
-/**
- * Sensor Simulado (Cenário B)
- * 
- * Este programa envia leituras periódicas (temperatura, umidade, pressão)
- * via UDP para o servidor agregador. Cada instância representa um sensor
- * diferente, identificado por um ID passado como argumento.
- * 
- * Compilação: gcc -Wall sensor.c -o sensor
- * Execução: ./sensor <id>   (ex.: ./sensor 1, ./sensor 2, ... até 5)
- * 
- * O sensor roda em loop infinito. Para encerrar, pressione Ctrl+C.
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,9 +21,7 @@ typedef struct {
     float pressao;
 } Leitura;
 
-/**
- * Gera um número float pseudo-aleatório no intervalo [min, max].
- */
+/* Gera um número float pseudo-aleatório no intervalo [min, max]. */
 float rand_range(float min, float max) {
     return min + (float)rand() / RAND_MAX * (max - min);
 }
